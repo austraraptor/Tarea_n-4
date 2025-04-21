@@ -85,7 +85,7 @@ server <- function(input, output, session) {
       
       tipo <- ifelse(is.numeric(x), "cuantitativa", "cualitativa")
       
-      # GRAFICOS SEGUN SELECCIÓN Y TIPO
+      
       if (input$grafico == "Histograma" && tipo == "cuantitativa") {
         ggplot(df, aes(x = .data[[var]])) +
           geom_histogram(fill = "skyblue", bins = 30, color = "black") +
@@ -123,7 +123,7 @@ server <- function(input, output, session) {
           theme_minimal()
         
       } else {
-        # NO COMPATIBLE
+        
         ggplot() +
           annotate("text", x = 0.5, y = 0.5, label = "No compatible", size = 8, color = "red") +
           theme_void()
